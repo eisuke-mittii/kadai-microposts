@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
   
   def login(email, password)
     @user = User.find_by(email: email)
+  #  @user = User.find(100)
     if @user && @user.authenticate(password)
       #ログイン成功
       session[:user_id] = @user.id
